@@ -32,7 +32,7 @@
           "type": "platform",
           "version": "1.0.0"
         },
-        "Microsoft.IdentityModel.Clients.ActiveDirectory": "3.13.5"
+        "Microsoft.IdentityModel.Clients.ActiveDirectory": "3.13.8"
       },
       "frameworkAssemblies": {
       },
