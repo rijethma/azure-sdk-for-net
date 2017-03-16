@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -27,11 +28,14 @@ namespace KeyVault.TestFramework
         public string keyVersion;
         public KeyIdentifier keyIdentifier;
         public ClientCredential clientCredential;
+        public string StorageResourceUrl1;
+        public string StorageResourceUrl2;
 
         // Required for cleaning up at the end of the test
         private string rgName = "", appObjectId = "";
         private bool fromConfig;
         private TokenCache tokenCache;
+        private DeviceCodeResult _deviceCodeForStorageTests;
 
         public KeyVaultTestFixture()
         {
@@ -49,6 +53,7 @@ namespace KeyVault.TestFramework
                 keyName = keyIdentifier.Name;
                 keyVersion = keyIdentifier.Version;
                 tokenCache = new TokenCache();
+                _deviceCodeForStorageTests = null;
             }
         }
 
@@ -118,19 +123,25 @@ namespace KeyVault.TestFramework
             string authClientId = TestConfigurationManager.TryGetEnvironmentOrAppSetting("AuthClientId");
             string authSecret = TestConfigurationManager.TryGetEnvironmentOrAppSetting("AuthClientSecret");
             string standardVaultOnlyString = TestConfigurationManager.TryGetEnvironmentOrAppSetting("StandardVaultOnly");
+            string storageUrl1 = TestConfigurationManager.TryGetEnvironmentOrAppSetting("StorageResourceUrl1");
+            string storageUrl2 = TestConfigurationManager.TryGetEnvironmentOrAppSetting("StorageResourceUrl2");
+
             bool result;
             if (!bool.TryParse(standardVaultOnlyString, out result))
             {
                 result = false;
             }
 
-            if (string.IsNullOrWhiteSpace(vault) || string.IsNullOrWhiteSpace(authClientId) || string.IsNullOrWhiteSpace(authSecret))
+            if (string.IsNullOrWhiteSpace(vault) || string.IsNullOrWhiteSpace(authClientId) || string.IsNullOrWhiteSpace(authSecret)
+                || string.IsNullOrWhiteSpace(storageUrl1) || string.IsNullOrWhiteSpace(storageUrl2))
                 return false;
             else
             {
                 this.vaultAddress = vault;
                 this.clientCredential = new ClientCredential(authClientId, authSecret);
                 this.standardVaultOnly = result;
+                this.StorageResourceUrl1 = storageUrl1;
+                this.StorageResourceUrl2 = storageUrl2;
                 return true;
             }
         }
@@ -143,9 +154,36 @@ namespace KeyVault.TestFramework
             return result.AccessToken;
         }
 
+        public async Task<string> GetUserAccessToken(string authority, string resource, string scope)
+        {
+            string clientId = TestConfigurationManager.TryGetEnvironmentOrAppSetting("NativeClientId");
+            var context = new AuthenticationContext(authority, tokenCache);
+            if (_deviceCodeForStorageTests == null)
+            {
+                _deviceCodeForStorageTests =
+                    await context.AcquireDeviceCodeAsync(resource, clientId).ConfigureAwait(false);
+
+                Debug.WriteLine("############################################################################################");
+                Debug.WriteLine("Test won't run until you perform following steps:");
+                Debug.WriteLine($"1. Go to following url: {_deviceCodeForStorageTests.VerificationUrl}.");
+                Debug.WriteLine($"2. Insert following User Code: {_deviceCodeForStorageTests.UserCode}.");
+                Debug.WriteLine("3. Login with your username and password credentials.");
+                Debug.WriteLine("############################################################################################");
+            }
+
+            var result = await context.AcquireTokenByDeviceCodeAsync(_deviceCodeForStorageTests).ConfigureAwait(false);
+            return result.AccessToken;
+        }
+
         public KeyVaultClient CreateKeyVaultClient()
         {
             var myclient = new KeyVaultClient(new TestKeyVaultCredential(GetAccessToken), GetHandlers());
+            return myclient;
+        }
+
+        public KeyVaultClient CreateKeyVaultUserClient()
+        {
+            var myclient = new KeyVaultClient(new TestKeyVaultCredential(GetUserAccessToken), GetHandlers());
             return myclient;
         }
 

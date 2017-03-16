@@ -1,0 +1,216 @@
+{
+  "Entries": [
+    {
+      "RequestUri": "//storage/deletesas01?api-version=2016-10-01",
+      "EncodedRequestUri": "Ly9zdG9yYWdlL2RlbGV0ZXNhczAxP2FwaS12ZXJzaW9uPTIwMTYtMTAtMDE=",
+      "RequestMethod": "PUT",
+      "RequestBody": "{\r\n  \"resourceId\": \"/subscriptions/76fb41ba-5387-4dff-89f5-24ae457ade99/resourceGroups/kvstoragetestrg/providers/Microsoft.Storage/storageAccounts/azkvteststorage1westus\",\r\n  \"activeKeyName\": \"key1\",\r\n  \"autoRegenerateKey\": true,\r\n  \"regenerationPeriod\": \"P30D\",\r\n  \"attributes\": {\r\n    \"enabled\": true\r\n  }\r\n}",
+      "RequestHeaders": {
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Content-Length": [
+          "310"
+        ],
+        "x-ms-client-request-id": [
+          "25dc4856-cb88-4571-b959-0476c32d9790"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.24410.01",
+          "Microsoft.Azure.KeyVault.KeyVaultClient/2.0.6"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"https://storage-sdk-test.vault-int.azure-int.net/storage/deletesas01\",\r\n  \"resourceId\": \"/subscriptions/76fb41ba-5387-4dff-89f5-24ae457ade99/resourceGroups/kvstoragetestrg/providers/Microsoft.Storage/storageAccounts/azkvteststorage1westus\",\r\n  \"activeKeyName\": \"key1\",\r\n  \"autoRegenerateKey\": true,\r\n  \"regenerationPeriod\": \"P30D\",\r\n  \"attributes\": {\r\n    \"enabled\": true,\r\n    \"created\": 1490738437,\r\n    \"updated\": 1490738437\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "390"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Tue, 28 Mar 2017 22:00:37 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-IIS/8.5"
+        ],
+        "x-ms-keyvault-region": [
+          "eastus2"
+        ],
+        "x-ms-request-id": [
+          "34d34d56-d865-4e56-911e-c80dc1fb84c4"
+        ],
+        "x-ms-keyvault-service-version": [
+          "1.0.0.1141"
+        ],
+        "X-AspNet-Version": [
+          "4.0.30319"
+        ],
+        "X-Powered-By": [
+          "ASP.NET"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000;includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "//storage/deletesas01/sas/deleteStrgSasDef01?api-version=2016-10-01",
+      "EncodedRequestUri": "Ly9zdG9yYWdlL2RlbGV0ZXNhczAxL3Nhcy9kZWxldGVTdHJnU2FzRGVmMDE/YXBpLXZlcnNpb249MjAxNi0xMC0wMQ==",
+      "RequestMethod": "PUT",
+      "RequestBody": "{\r\n  \"parameters\": {\r\n    \"sasType\": \"account\",\r\n    \"signedProtocols\": \"https\",\r\n    \"signedServices\": \"bq\",\r\n    \"signedResourceTypes\": \"myresource\",\r\n    \"signedPermissions\": \"rw\",\r\n    \"signedVersion\": \"2016-05-31\",\r\n    \"validityPeriod\": \"PT10H\"\r\n  },\r\n  \"attributes\": {\r\n    \"enabled\": true\r\n  }\r\n}",
+      "RequestHeaders": {
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Content-Length": [
+          "304"
+        ],
+        "x-ms-client-request-id": [
+          "0f3d7e95-f9bd-40b9-8ed7-546439d65dae"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.24410.01",
+          "Microsoft.Azure.KeyVault.KeyVaultClient/2.0.6"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"https://storage-sdk-test.vault-int.azure-int.net/storage/deletesas01/sas/deleteStrgSasDef01\",\r\n  \"sid\": \"https://storage-sdk-test.vault-int.azure-int.net/secrets/deletesas01-deleteStrgSasDef01\",\r\n  \"parameters\": {\r\n    \"sasType\": \"account\",\r\n    \"signedProtocols\": \"https\",\r\n    \"signedServices\": \"bq\",\r\n    \"signedResourceTypes\": \"myresource\",\r\n    \"signedPermissions\": \"rw\",\r\n    \"signedVersion\": \"2016-05-31\",\r\n    \"validityPeriod\": \"PT10H\"\r\n  },\r\n  \"attributes\": {\r\n    \"enabled\": true,\r\n    \"created\": 1490738438,\r\n    \"updated\": 1490738438\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "465"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Tue, 28 Mar 2017 22:00:37 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-IIS/8.5"
+        ],
+        "x-ms-keyvault-region": [
+          "eastus2"
+        ],
+        "x-ms-request-id": [
+          "b31db77b-b58f-45ee-8c29-d04bff5741f0"
+        ],
+        "x-ms-keyvault-service-version": [
+          "1.0.0.1141"
+        ],
+        "X-AspNet-Version": [
+          "4.0.30319"
+        ],
+        "X-Powered-By": [
+          "ASP.NET"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000;includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    },
+    {
+      "RequestUri": "//storage/deletesas01/sas/deleteStrgSasDef01?api-version=2016-10-01",
+      "EncodedRequestUri": "Ly9zdG9yYWdlL2RlbGV0ZXNhczAxL3Nhcy9kZWxldGVTdHJnU2FzRGVmMDE/YXBpLXZlcnNpb249MjAxNi0xMC0wMQ==",
+      "RequestMethod": "DELETE",
+      "RequestBody": "",
+      "RequestHeaders": {
+        "x-ms-client-request-id": [
+          "ec812a21-6c87-4fac-ba04-c530495970df"
+        ],
+        "accept-language": [
+          "en-US"
+        ],
+        "User-Agent": [
+          "FxVersion/4.6.24410.01",
+          "Microsoft.Azure.KeyVault.KeyVaultClient/2.0.6"
+        ]
+      },
+      "ResponseBody": "{\r\n  \"id\": \"https://storage-sdk-test.vault-int.azure-int.net/storage/deletesas01/sas/deleteStrgSasDef01\",\r\n  \"sid\": \"https://storage-sdk-test.vault-int.azure-int.net/secrets/deletesas01-deleteStrgSasDef01\",\r\n  \"parameters\": {\r\n    \"sasType\": \"account\",\r\n    \"signedProtocols\": \"https\",\r\n    \"signedServices\": \"bq\",\r\n    \"signedResourceTypes\": \"myresource\",\r\n    \"signedPermissions\": \"rw\",\r\n    \"signedVersion\": \"2016-05-31\",\r\n    \"validityPeriod\": \"PT10H\"\r\n  },\r\n  \"attributes\": {\r\n    \"enabled\": true,\r\n    \"created\": 1490738438,\r\n    \"updated\": 1490738438\r\n  }\r\n}",
+      "ResponseHeaders": {
+        "Content-Length": [
+          "465"
+        ],
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ],
+        "Expires": [
+          "-1"
+        ],
+        "Cache-Control": [
+          "no-cache"
+        ],
+        "Date": [
+          "Tue, 28 Mar 2017 22:00:38 GMT"
+        ],
+        "Pragma": [
+          "no-cache"
+        ],
+        "Server": [
+          "Microsoft-IIS/8.5"
+        ],
+        "x-ms-keyvault-region": [
+          "eastus2"
+        ],
+        "x-ms-request-id": [
+          "87164307-6e75-4538-9326-9839c4efb53e"
+        ],
+        "x-ms-keyvault-service-version": [
+          "1.0.0.1141"
+        ],
+        "X-AspNet-Version": [
+          "4.0.30319"
+        ],
+        "X-Powered-By": [
+          "ASP.NET"
+        ],
+        "Strict-Transport-Security": [
+          "max-age=31536000;includeSubDomains"
+        ],
+        "X-Content-Type-Options": [
+          "nosniff"
+        ]
+      },
+      "StatusCode": 200
+    }
+  ],
+  "Names": {},
+  "Variables": {
+    "VaultAddress": "https://storage-sdk-test.vault-int.azure-int.net/",
+    "KeyName": "sdktestkey",
+    "KeyVersion": "8343d31ed7c84f0fba1c20d1dbf0993b",
+    "StorageResourceUrl1": "/subscriptions/76fb41ba-5387-4dff-89f5-24ae457ade99/resourceGroups/kvstoragetestrg/providers/Microsoft.Storage/storageAccounts/azkvteststorage1westus",
+    "StorageResourceUrl2": "/subscriptions/76fb41ba-5387-4dff-89f5-24ae457ade99/resourceGroups/kvstoragetestrg/providers/Microsoft.Storage/storageAccounts/azkvteststorage2westus"
+  }
+}

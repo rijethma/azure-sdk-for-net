@@ -41,7 +41,8 @@ namespace KeyVault.Management.Tests
                     {
                         Keys = new string[] { "all" },
                         Secrets = null,
-                        Certificates = new string[] { "all" }
+                        Certificates = new string[] { "all" },
+                        Storage = new string[] { "all" },
                     }
                 };
                 var createdVault = client.Vaults.CreateOrUpdate(
@@ -86,6 +87,7 @@ namespace KeyVault.Management.Tests
                 createdVault.Properties.Sku.Name = SkuName.Premium;
                 accPol.Permissions.Secrets = new string[] { "get", "set" };
                 accPol.Permissions.Keys = null;
+                accPol.Permissions.Storage = new string[] { "get", "regenerateKey" };
                 createdVault.Properties.AccessPolicies = new[] { accPol };
 
                 var updateVault = client.Vaults.CreateOrUpdate(
@@ -170,7 +172,8 @@ namespace KeyVault.Management.Tests
                     {
                         Keys = new string[] { "all" },
                         Secrets = null,
-                        Certificates = new string[] { "all" }
+                        Certificates = new string[] { "all" },
+                        Storage = new string[] { "get" },
                     }
                 };
                 var createVault = client.Vaults.CreateOrUpdate(
@@ -298,10 +301,14 @@ namespace KeyVault.Management.Tests
                     e.ObjectId == a.ObjectId &&
                     e.ApplicationId == a.ApplicationId &&
                     ((a.Permissions.Secrets == null && e.Permissions.Secrets == null) ||
-                        Enumerable.SequenceEqual(e.Permissions.Secrets, a.Permissions.Secrets)) &&
+                     Enumerable.SequenceEqual(e.Permissions.Secrets, a.Permissions.Secrets)) &&
                     ((a.Permissions.Keys == null && e.Permissions.Keys == null) ||
-                        Enumerable.SequenceEqual(a.Permissions.Keys, a.Permissions.Keys))
-                    ).FirstOrDefault();
+                     Enumerable.SequenceEqual(e.Permissions.Keys, a.Permissions.Keys)) &&
+                     ((a.Permissions.Certificates == null && e.Permissions.Certificates == null) ||
+                      Enumerable.SequenceEqual(e.Permissions.Certificates, a.Permissions.Certificates)) &&
+                     ((a.Permissions.Storage == null && e.Permissions.Storage == null) ||
+                      Enumerable.SequenceEqual(e.Permissions.Storage, a.Permissions.Storage))
+                        ).FirstOrDefault();
                 if (match == null)
                     return false;
 
@@ -360,7 +367,8 @@ namespace KeyVault.Management.Tests
                                         Permissions = new Permissions{
                                             Keys = new string[]{"all"},
                                             Secrets = new string[]{"all"},
-                                            Certificates = new string[] { "all" }
+                                            Certificates = new string[] { "all" },
+                                            Storage = new string[] { "all" },
                                         }
                                     }
                                 }
