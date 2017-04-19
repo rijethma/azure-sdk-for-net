@@ -9056,9 +9056,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (storageAccountName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (ApiVersion == null)
@@ -9249,9 +9249,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (storageAccountName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (ApiVersion == null)
@@ -9460,9 +9460,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (storageAccountName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (ApiVersion == null)
@@ -9693,9 +9693,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (storageAccountName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (ApiVersion == null)
@@ -9905,9 +9905,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (storageAccountName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (ApiVersion == null)
@@ -10118,9 +10118,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (storageAccountName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (maxresults > 25)
@@ -10327,9 +10327,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (storageAccountName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (sasDefinitionName == null)
@@ -10338,9 +10338,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (sasDefinitionName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(sasDefinitionName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(sasDefinitionName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "sasDefinitionName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "sasDefinitionName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (ApiVersion == null)
@@ -10536,9 +10536,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (storageAccountName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (sasDefinitionName == null)
@@ -10547,9 +10547,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (sasDefinitionName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(sasDefinitionName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(sasDefinitionName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "sasDefinitionName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "sasDefinitionName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (ApiVersion == null)
@@ -10754,9 +10754,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (storageAccountName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (sasDefinitionName == null)
@@ -10765,9 +10765,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (sasDefinitionName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(sasDefinitionName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(sasDefinitionName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "sasDefinitionName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "sasDefinitionName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (ApiVersion == null)
@@ -10990,9 +10990,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (storageAccountName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(storageAccountName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "storageAccountName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (sasDefinitionName == null)
@@ -11001,9 +11001,9 @@ namespace Microsoft.Azure.KeyVault
             }
             if (sasDefinitionName != null)
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(sasDefinitionName, "^[0-9a-zA-Z-]+$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(sasDefinitionName, "^[0-9a-zA-Z]+$"))
                 {
-                    throw new ValidationException(ValidationRules.Pattern, "sasDefinitionName", "^[0-9a-zA-Z-]+$");
+                    throw new ValidationException(ValidationRules.Pattern, "sasDefinitionName", "^[0-9a-zA-Z]+$");
                 }
             }
             if (ApiVersion == null)
